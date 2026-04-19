@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="CoinsInc"
+config/name="Coins Inc."
 run/main_scene="uid://jbgyki1oom5m"
 config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://d22qaxjcl67kx"
 
 [autoload]
 
