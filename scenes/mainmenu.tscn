@@ -3,12 +3,21 @@
 [ext_resource type="Script" uid="uid://cu7b1gi3adbur" path="res://scripts/MainMenu.cs" id="1_natt5"]
 [ext_resource type="PackedScene" uid="uid://7jlooho67jpn" path="res://scenes/logo.tscn" id="2_natt5"]
 [ext_resource type="Script" uid="uid://ds0hw1tqrylxr" path="res://scripts/AboutWindow.cs" id="3_r3g3c"]
+[ext_resource type="Script" uid="uid://x3mxkpd1venu" path="res://scripts/VersionLabel.cs" id="4_3vvtq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5g8n"]
+font_color = Color(0.30323327, 0.30323267, 0.3032328, 1)
+shadow_color = Color(0, 0, 0, 0.0627451)
 
 [sub_resource type="LabelSettings" id="LabelSettings_natt5"]
 shadow_color = Color(0, 0, 0, 0.2509804)
 
 [sub_resource type="LabelSettings" id="LabelSettings_r3g3c"]
 shadow_color = Color(0, 0, 0, 0.2509804)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3vvtq"]
+font_size = 32
+shadow_offset = Vector2(2, 2)
 
 [node name="Control" type="Control" unique_id=1055929862]
 layout_mode = 3
@@ -82,6 +91,15 @@ grow_vertical = 2
 [node name="LogoContainer" parent="AboutWindow/VBoxContainer" unique_id=1632933540 instance=ExtResource("2_natt5")]
 layout_mode = 2
 
+[node name="Version" type="Label" parent="AboutWindow/VBoxContainer" unique_id=1311690884]
+custom_minimum_size = Vector2(284, 0)
+layout_mode = 2
+text = "Version"
+label_settings = SubResource("LabelSettings_s5g8n")
+autowrap_mode = 2
+script = ExtResource("4_3vvtq")
+ShowEngineVersion = true
+
 [node name="Text" type="Label" parent="AboutWindow/VBoxContainer" unique_id=1365326739]
 custom_minimum_size = Vector2(284, 0)
 layout_mode = 2
@@ -99,6 +117,19 @@ layout_mode = 2
 text = "Made by codingisfun2831t in Godot"
 label_settings = SubResource("LabelSettings_r3g3c")
 horizontal_alignment = 1
+
+[node name="Version" type="Label" parent="." unique_id=229978418]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_bottom = -5.0
+grow_vertical = 0
+text = "Version"
+label_settings = SubResource("LabelSettings_3vvtq")
+vertical_alignment = 2
+script = ExtResource("4_3vvtq")
 
 [connection signal="pressed" from="MenuContainer/ButtonsContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MenuContainer/ButtonsContainer/HBoxContainer/AboutButton" to="." method="_on_about_button_pressed"]
