@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b31lg68kavf62"]
+
+[ext_resource type="Script" uid="uid://dddwd7kji13mi" path="res://scripts/Coin.cs" id="1_rwqht"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i64fm"]
+radius = 32.0
+
+[node name="Coin" type="Area2D" unique_id=1875336276]
+script = ExtResource("1_rwqht")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=737630552]
+scale = Vector2(2, 2)
+
+[node name="Shape" type="CollisionShape2D" parent="." unique_id=1670683384]
+shape = SubResource("CircleShape2D_i64fm")

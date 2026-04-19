@@ -1,0 +1,105 @@
+[gd_scene format=3 uid="uid://jbgyki1oom5m"]
+
+[ext_resource type="Script" uid="uid://cu7b1gi3adbur" path="res://scripts/MainMenu.cs" id="1_natt5"]
+[ext_resource type="PackedScene" uid="uid://7jlooho67jpn" path="res://scenes/logo.tscn" id="2_natt5"]
+[ext_resource type="Script" uid="uid://ds0hw1tqrylxr" path="res://scripts/AboutWindow.cs" id="3_r3g3c"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_natt5"]
+shadow_color = Color(0, 0, 0, 0.2509804)
+
+[sub_resource type="LabelSettings" id="LabelSettings_r3g3c"]
+shadow_color = Color(0, 0, 0, 0.2509804)
+
+[node name="Control" type="Control" unique_id=1055929862]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_natt5")
+
+[node name="MenuContainer" type="VBoxContainer" parent="." unique_id=1339072765]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -82.5
+offset_right = 102.0
+offset_bottom = 82.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+
+[node name="Logo" parent="MenuContainer" unique_id=2094763555 instance=ExtResource("2_natt5")]
+layout_mode = 2
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="MenuContainer" unique_id=2130790528]
+layout_mode = 2
+
+[node name="PlayButton" type="Button" parent="MenuContainer/ButtonsContainer" unique_id=116479269]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuContainer/ButtonsContainer" unique_id=1268023183]
+layout_mode = 2
+
+[node name="AboutButton" type="Button" parent="MenuContainer/ButtonsContainer/HBoxContainer" unique_id=712527846]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "About"
+
+[node name="ExitButton" type="Button" parent="MenuContainer/ButtonsContainer/HBoxContainer" unique_id=825719270]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+
+[node name="AboutWindow" type="Window" parent="." unique_id=2140400357]
+transparent_bg = true
+oversampling_override = 1.0
+title = "About"
+position = Vector2i(0, 36)
+size = Vector2i(284, 175)
+visible = false
+unresizable = true
+transparent = true
+popup_window = true
+script = ExtResource("3_r3g3c")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AboutWindow" unique_id=974650637]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogoContainer" parent="AboutWindow/VBoxContainer" unique_id=1632933540 instance=ExtResource("2_natt5")]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="AboutWindow/VBoxContainer" unique_id=1365326739]
+custom_minimum_size = Vector2(284, 0)
+layout_mode = 2
+text = "Coins Inc. is a incremental game, inspired by Cookies Inc, and some stuff from Scrap Clicker, wherein you move your mouse to collect coins, upgrade, collect more, and repeat the cycle."
+label_settings = SubResource("LabelSettings_natt5")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spacer" type="Control" parent="AboutWindow/VBoxContainer" unique_id=585020614]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CreatedBy" type="Label" parent="AboutWindow/VBoxContainer" unique_id=2104095900]
+layout_mode = 2
+text = "Made by codingisfun2831t in Godot"
+label_settings = SubResource("LabelSettings_r3g3c")
+horizontal_alignment = 1
+
+[connection signal="pressed" from="MenuContainer/ButtonsContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuContainer/ButtonsContainer/HBoxContainer/AboutButton" to="." method="_on_about_button_pressed"]
+[connection signal="pressed" from="MenuContainer/ButtonsContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

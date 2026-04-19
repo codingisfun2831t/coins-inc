@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://bycsdokw7o3he"]
+
+[ext_resource type="PackedScene" uid="uid://7jlooho67jpn" path="res://scenes/logo.tscn" id="1_hx3vx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hx3vx"]
+content_margin_left = 10.0
+content_margin_top = 28.0
+content_margin_right = 10.0
+content_margin_bottom = 8.0
+bg_color = Color(0.7662643, 0.6979917, 0.3917732, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 8.0
+expand_margin_top = 32.0
+expand_margin_right = 8.0
+expand_margin_bottom = 6.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_r3g3c"]
+shadow_color = Color(0, 0, 0, 0.2509804)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s5g8n"]
+shadow_color = Color(0, 0, 0, 0.2509804)
+
+[node name="Window" type="Window" unique_id=2140400357]
+oversampling_override = 1.0
+title = "About"
+position = Vector2i(0, 36)
+size = Vector2i(284, 175)
+unresizable = true
+popup_window = true
+
+[node name="Panel" type="Panel" parent="." unique_id=1456623266]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hx3vx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=974650637]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LogoContainer" parent="Panel/VBoxContainer" unique_id=2094763555 instance=ExtResource("1_hx3vx")]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="Panel/VBoxContainer" unique_id=1365326739]
+custom_minimum_size = Vector2(284, 0)
+layout_mode = 2
+text = "Coins Inc. is a incremental game, inspired by Cookies Inc, and some stuff from Scrap Clicker, wherein you move your mouse to collect coins, upgrade, collect more, and repeat the cycle."
+label_settings = SubResource("LabelSettings_r3g3c")
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Spacer" type="Control" parent="Panel/VBoxContainer" unique_id=585020614]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="CreatedBy" type="Label" parent="Panel/VBoxContainer" unique_id=1153757569]
+layout_mode = 2
+text = "Made by codingisfun2831t in Godot"
+label_settings = SubResource("LabelSettings_s5g8n")
+horizontal_alignment = 1

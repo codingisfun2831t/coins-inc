@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://7jlooho67jpn"]
+
+[ext_resource type="Texture2D" uid="uid://d22qaxjcl67kx" path="res://textures/coins/coin.png" id="1_nc5ub"]
+
+[sub_resource type="FontVariation" id="FontVariation_nc5ub"]
+spacing_top = -15
+spacing_bottom = -8
+
+[sub_resource type="LabelSettings" id="LabelSettings_redmh"]
+line_spacing = 0.0
+font = SubResource("FontVariation_nc5ub")
+font_size = 64
+shadow_color = Color(0, 0, 0, 0.2509804)
+shadow_offset = Vector2(4, 4)
+
+[node name="LogoContainer" type="HBoxContainer" unique_id=2094763555]
+custom_minimum_size = Vector2(284, 64)
+offset_right = 284.0
+offset_bottom = 64.0
+theme_override_constants/separation = 16
+
+[node name="Coin" type="TextureRect" parent="." unique_id=1043387195]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_nc5ub")
+expand_mode = 2
+stretch_mode = 6
+
+[node name="Text" type="Label" parent="." unique_id=882327477]
+layout_mode = 2
+theme_override_font_sizes/font_size = 96
+text = "Coins Inc."
+label_settings = SubResource("LabelSettings_redmh")

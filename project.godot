@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="CoinsInc"
+run/main_scene="uid://jbgyki1oom5m"
+config/features=PackedStringArray("4.6", "C#", "GL Compatibility")
+config/icon="res://icon.svg"
+
+[autoload]
+
+SaveManager="*uid://wrc6uohh3p22"
+CoinManager="*uid://df8eghiubmayy"
+
+[dotnet]
+
+project/assembly_name="CoinsInc"
+
+[gui]
+
+theme/custom="uid://dw3y0sb6ugytx"
+theme/custom_font="uid://dy5lperpa0a5b"
+
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+rendering_device/driver.windows="d3d12"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.23462933, 0.5113095, 0.23428062, 1)
