@@ -6,6 +6,12 @@ public partial class CoinSpawner : ReferenceRect
     private double _time = 0;
     private PackedScene _coinScene;
 
+    [Export]
+    public double SpawnDelay { get; set; } = 0.1D;
+
+    [Export]
+    public int SpawnMax { get; set; } = 25;
+
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
@@ -18,12 +24,21 @@ public partial class CoinSpawner : ReferenceRect
 
 	public override void _Process(double delta)
 	{
+        if (GetChildCount() >= SpawnMax)
+        {
+            _time = 0; // reset timer to avoid instant spawn after a coin is collected
+            return;
+        }
+
         _time += delta;
 
-        if (_time >= .1D)
+        if (_time >= SpawnDelay)
         {
-            int amt = (int)Math.Floor(_time / .1D);
-            SpawnInArea();
+            int amt = (int)Math.Floor(_time / SpawnDelay);
+            for (int i = 0; i < amt; i++)
+            {
+                SpawnInArea();
+            }
 
             _time = 0;
         }
