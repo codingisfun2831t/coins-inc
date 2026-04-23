@@ -12,6 +12,9 @@
 [sub_resource type="LabelSettings" id="LabelSettings_85g3d"]
 font_size = 32
 
+[sub_resource type="LabelSettings" id="LabelSettings_tipki"]
+font_size = 32
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_jyhfs"]
 radius = 4.0
 
@@ -71,12 +74,12 @@ alignment = 1
 [node name="Icon" type="TextureRect" parent="HUD/Currencies/Coins" unique_id=137223169]
 layout_mode = 2
 texture = ExtResource("1_o5qli")
-expand_mode = 2
 
 [node name="Text" type="Label" parent="HUD/Currencies/Coins" unique_id=871827803]
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "0"
+label_settings = SubResource("LabelSettings_tipki")
 horizontal_alignment = 1
 vertical_alignment = 1
 
