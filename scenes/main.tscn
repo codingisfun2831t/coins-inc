@@ -2,10 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://d22qaxjcl67kx" path="res://textures/coins/coin.png" id="1_o5qli"]
 [ext_resource type="Script" uid="uid://bjlw1iafleyjt" path="res://scripts/Buttons.cs" id="1_tefeu"]
+[ext_resource type="Script" uid="uid://dgb7v5t46nyki" path="res://scripts/SavingIndicator.cs" id="1_tipki"]
 [ext_resource type="Script" uid="uid://chskkltb8h75y" path="res://scripts/CoinSpawner.cs" id="2_0wfyh"]
 [ext_resource type="Script" uid="uid://djec1n0btwn3p" path="res://scripts/Currencies.cs" id="2_jyhfs"]
 [ext_resource type="Texture2D" uid="uid://qicts0cqkayh" path="res://textures/exit.png" id="2_o6xl0"]
+[ext_resource type="Texture2D" uid="uid://bgn8u1h67w8vu" path="res://textures/save.png" id="3_o6xl0"]
 [ext_resource type="Script" uid="uid://dld8ukffcj70n" path="res://scripts/Cursor.cs" id="3_sugp2"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_85g3d"]
+font_size = 32
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jyhfs"]
 radius = 4.0
@@ -14,20 +19,43 @@ radius = 4.0
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=844393428]
 
-[node name="Buttons" type="HBoxContainer" parent="HUD" unique_id=1055159410]
+[node name="BottomStack" type="VBoxContainer" parent="HUD" unique_id=1556852120]
 anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 5.0
-offset_bottom = -5.0
+offset_left = 10.0
+offset_bottom = -10.0
 grow_vertical = 0
-theme_override_constants/separation = 8
-alignment = 1
-script = ExtResource("1_tefeu")
 
-[node name="Exit" type="Button" parent="HUD/Buttons" unique_id=1304848461]
+[node name="SavingIndicator" type="HBoxContainer" parent="HUD/BottomStack" unique_id=1665716168]
+visible = false
+layout_mode = 2
+script = ExtResource("1_tipki")
+SavingDelay = 5.0
+
+[node name="SaveIcon" type="TextureRect" parent="HUD/BottomStack/SavingIndicator" unique_id=1962325685]
+layout_mode = 2
+texture = ExtResource("3_o6xl0")
+
+[node name="SaveLabel" type="Label" parent="HUD/BottomStack/SavingIndicator" unique_id=140199949]
+layout_mode = 2
+text = "Saving..."
+label_settings = SubResource("LabelSettings_85g3d")
+
+[node name="Buttons" type="HBoxContainer" parent="HUD/BottomStack" unique_id=1055159410 node_paths=PackedStringArray("SavingIndicator")]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_constants/separation = 8
+script = ExtResource("1_tefeu")
+SavingIndicator = NodePath("../SavingIndicator")
+
+[node name="Exit" type="Button" parent="HUD/BottomStack/Buttons" unique_id=1304848461]
 layout_mode = 2
 icon = ExtResource("2_o6xl0")
+
+[node name="ManualSave" type="Button" parent="HUD/BottomStack/Buttons" unique_id=1976912212]
+layout_mode = 2
+icon = ExtResource("3_o6xl0")
 
 [node name="Currencies" type="VBoxContainer" parent="HUD" unique_id=326436360]
 offset_left = 5.0
