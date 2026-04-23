@@ -31,7 +31,6 @@ grow_vertical = 0
 visible = false
 layout_mode = 2
 script = ExtResource("1_tipki")
-SavingDelay = 5.0
 
 [node name="SaveIcon" type="TextureRect" parent="HUD/BottomStack/SavingIndicator" unique_id=1962325685]
 layout_mode = 2
