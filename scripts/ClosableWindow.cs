@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class AboutWindow : Window
+public partial class ClosableWindow : Window
 {
 	public override void _Ready()
 	{

@@ -5,9 +5,13 @@ public partial class Buttons : HBoxContainer
 {
 	private Button _exit;
     private Button _save;
+    private Button _coins;
 
     [Export]
     public SavingIndicator SavingIndicator { get; set; }
+
+    [Export]
+    public CoinsWindow CoinsWindow { get; set; }
 
     public override void _Ready()
 	{
@@ -15,6 +19,8 @@ public partial class Buttons : HBoxContainer
 		_exit.Pressed += OnExitPressed;
         _save = GetNode<Button>("ManualSave");
         _save.Pressed += OnSavePressed;
+        _coins = GetNode<Button>("Coins");
+        _coins.Pressed += OnCoinsPressed;
 
     }
 
@@ -27,5 +33,10 @@ public partial class Buttons : HBoxContainer
     private async void OnSavePressed()
     {
         await SavingIndicator.TriggerSave();
+    }
+
+    private void OnCoinsPressed()
+    {
+        CoinsWindow.PopupCentered();
     }
 }

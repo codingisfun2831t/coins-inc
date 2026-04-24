@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bkim6aqbmcun6"]
+
+[ext_resource type="Texture2D" uid="uid://byyr5gvcs36wa" path="res://ui/btn/btn-normal.png" id="1_o6fsr"]
+[ext_resource type="Texture2D" uid="uid://d22qaxjcl67kx" path="res://textures/coins/coin.png" id="2_1gsq6"]
+[ext_resource type="Script" uid="uid://deslsnxulxafg" path="res://scripts/CoinBuy.cs" id="2_c7b11"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c7b11"]
+texture = ExtResource("1_o6fsr")
+texture_margin_left = 3.0
+texture_margin_top = 3.0
+texture_margin_right = 3.0
+texture_margin_bottom = 3.0
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ikrt"]
+font_size = 32
+shadow_color = Color(0, 0, 0, 0.2509804)
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0eyua"]
+font_color = Color(0.3553136, 0.35531354, 0.35531357, 1)
+
+[node name="CoinBuy" type="Panel" unique_id=1997267756]
+custom_minimum_size = Vector2(350, 80)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -802.0
+offset_bottom = -568.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_c7b11")
+script = ExtResource("2_c7b11")
+
+[node name="Stack" type="HBoxContainer" parent="." unique_id=378262534]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Icon" type="TextureRect" parent="Stack" unique_id=1844416856]
+layout_mode = 2
+texture = ExtResource("2_1gsq6")
+expand_mode = 2
+
+[node name="Text" type="VBoxContainer" parent="Stack" unique_id=1291816715]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="Stack/Text" unique_id=2090527830]
+layout_mode = 2
+text = "Name"
+label_settings = SubResource("LabelSettings_8ikrt")
+
+[node name="Flavor" type="Label" parent="Stack/Text" unique_id=559445867]
+layout_mode = 2
+text = "Flavor"
+label_settings = SubResource("LabelSettings_0eyua")
+
+[node name="Padding" type="Control" parent="Stack" unique_id=68579472]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Right" type="VBoxContainer" parent="Stack" unique_id=893467763]
+layout_mode = 2
+
+[node name="Buy" type="Button" parent="Stack/Right" unique_id=438819572]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+text = "Buy"
+
+[node name="Price" type="Label" parent="Stack/Right" unique_id=324318034]
+layout_mode = 2
+text = "Price"
+label_settings = SubResource("LabelSettings_0eyua")
+horizontal_alignment = 2

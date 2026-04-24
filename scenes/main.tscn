@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://qicts0cqkayh" path="res://textures/exit.png" id="2_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bgn8u1h67w8vu" path="res://textures/save.png" id="3_o6xl0"]
 [ext_resource type="Script" uid="uid://dld8ukffcj70n" path="res://scripts/Cursor.cs" id="3_sugp2"]
+[ext_resource type="Script" uid="uid://cnfghuyh3074s" path="res://scenes/CoinsWindow.cs" id="11_ya4ey"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85g3d"]
 font_size = 32
@@ -44,12 +45,13 @@ layout_mode = 2
 text = "Saving..."
 label_settings = SubResource("LabelSettings_85g3d")
 
-[node name="Buttons" type="HBoxContainer" parent="HUD/BottomStack" unique_id=1055159410 node_paths=PackedStringArray("SavingIndicator")]
+[node name="Buttons" type="HBoxContainer" parent="HUD/BottomStack" unique_id=1055159410 node_paths=PackedStringArray("SavingIndicator", "CoinsWindow")]
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_constants/separation = 8
 script = ExtResource("1_tefeu")
 SavingIndicator = NodePath("../SavingIndicator")
+CoinsWindow = NodePath("../../../Coins")
 
 [node name="Exit" type="Button" parent="HUD/BottomStack/Buttons" unique_id=1304848461]
 layout_mode = 2
@@ -58,6 +60,10 @@ icon = ExtResource("2_o6xl0")
 [node name="ManualSave" type="Button" parent="HUD/BottomStack/Buttons" unique_id=1976912212]
 layout_mode = 2
 icon = ExtResource("3_o6xl0")
+
+[node name="Coins" type="Button" parent="HUD/BottomStack/Buttons" unique_id=1460199797]
+layout_mode = 2
+icon = ExtResource("1_o5qli")
 
 [node name="Currencies" type="VBoxContainer" parent="HUD" unique_id=326436360]
 offset_left = 5.0
@@ -69,7 +75,6 @@ script = ExtResource("2_jyhfs")
 [node name="Coins" type="HBoxContainer" parent="HUD/Currencies" unique_id=1318223573]
 layout_mode = 2
 theme_override_constants/separation = 8
-alignment = 1
 
 [node name="Icon" type="TextureRect" parent="HUD/Currencies/Coins" unique_id=137223169]
 layout_mode = 2
@@ -103,3 +108,24 @@ script = ExtResource("3_sugp2")
 
 [node name="Shape" type="CollisionShape2D" parent="Cursor" unique_id=205008211]
 shape = SubResource("CircleShape2D_jyhfs")
+
+[node name="Coins" type="Window" parent="." unique_id=1169359654]
+transparent_bg = true
+canvas_item_default_texture_filter = 0
+oversampling_override = 1.0
+title = "Coins"
+position = Vector2i(80, 36)
+size = Vector2i(350, 350)
+visible = false
+transparent = true
+script = ExtResource("11_ya4ey")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Coins" unique_id=82105370]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Container" type="VBoxContainer" parent="Coins/ScrollContainer" unique_id=420109477]
+layout_mode = 2

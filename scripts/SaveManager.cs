@@ -16,6 +16,8 @@ public partial class SaveManager : Node
 
     public Array<string> BoughtCoins { get; set; }
 
+    public event Action OnCoinsChanged;
+
     public override void _Ready()
     {
         Instance = this;

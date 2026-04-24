@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cu7b1gi3adbur" path="res://scripts/MainMenu.cs" id="1_natt5"]
 [ext_resource type="PackedScene" uid="uid://7jlooho67jpn" path="res://scenes/logo.tscn" id="2_natt5"]
-[ext_resource type="Script" uid="uid://ds0hw1tqrylxr" path="res://scripts/AboutWindow.cs" id="3_r3g3c"]
+[ext_resource type="Script" uid="uid://ds0hw1tqrylxr" path="res://scripts/ClosableWindow.cs" id="3_r3g3c"]
 [ext_resource type="Script" uid="uid://x3mxkpd1venu" path="res://scripts/VersionLabel.cs" id="4_3vvtq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_s5g8n"]
