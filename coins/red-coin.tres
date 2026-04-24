@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CoinResource" format=3 uid="uid://61l076dbmgi6"]
+
+[ext_resource type="Texture2D" uid="uid://c8qmin40u1cht" path="res://textures/coins/red-coin.png" id="1_1dty2"]
+[ext_resource type="Script" uid="uid://b2hkqq6dgsvqy" path="res://scripts/CoinResource.cs" id="2_dfrmn"]
+
+[resource]
+script = ExtResource("2_dfrmn")
+ID = "red-coin"
+Name = "Red Coin"
+FlavorText = "Seems.. reused. Oh well."
+Price = 50
+BaseValue = 2
+Texture = ExtResource("1_1dty2")
+metadata/_custom_type_script = "uid://b2hkqq6dgsvqy"
