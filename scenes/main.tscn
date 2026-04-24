@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://qicts0cqkayh" path="res://textures/exit.png" id="2_o6xl0"]
 [ext_resource type="Texture2D" uid="uid://bgn8u1h67w8vu" path="res://textures/save.png" id="3_o6xl0"]
 [ext_resource type="Script" uid="uid://dld8ukffcj70n" path="res://scripts/Cursor.cs" id="3_sugp2"]
-[ext_resource type="Script" uid="uid://cnfghuyh3074s" path="res://scenes/CoinsWindow.cs" id="11_ya4ey"]
+[ext_resource type="Script" uid="uid://cnfghuyh3074s" path="res://scripts/CoinsWindow.cs" id="11_ya4ey"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85g3d"]
 font_size = 32

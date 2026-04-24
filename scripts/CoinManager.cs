@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class CoinManager : Node
 {
@@ -36,5 +37,7 @@ public partial class CoinManager : Node
         {
             GD.PrintErr($"Failed to open directory: {path}");
         }
+
+        Coins = new Dictionary<string, CoinResource>(Coins.OrderBy(kv => kv.Value.Price).ToDictionary(kv => kv.Key, kv => kv.Value));
     }
 }

@@ -69,8 +69,8 @@ public partial class SaveManager : Node
         else Coins = 0;
 
         if (has("boughtCoins")) BoughtCoins = (Array<string>)get("boughtCoins");
-        else BoughtCoins = new() { "coin" };
-        if (BoughtCoins.Count == 0) BoughtCoins.Add("coin");
+        else BoughtCoins = new() { "copper-coin" };
+        if (BoughtCoins.Count == 0) BoughtCoins.Add("copper-coin");
     }
 
     public CoinResource RandomBoughtCoin()

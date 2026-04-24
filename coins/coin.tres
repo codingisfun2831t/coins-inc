@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="CoinResource" format=3 uid="uid://mwx2u0mus2pl"]
+[gd_resource type="Resource" script_class="CoinResource" format=3 uid="uid://61l076dbmgi6"]
 
 [ext_resource type="Texture2D" uid="uid://d22qaxjcl67kx" path="res://textures/coins/coin.png" id="1_0uj21"]
 [ext_resource type="Script" uid="uid://b2hkqq6dgsvqy" path="res://scripts/CoinResource.cs" id="1_yubk5"]
@@ -7,7 +7,8 @@
 script = ExtResource("1_yubk5")
 ID = "coin"
 Name = "Coin"
-FlavorText = "Classic..."
-BaseValue = 1
+FlavorText = "Ah, now this is it."
+Price = 500
+BaseValue = 10
 Texture = ExtResource("1_0uj21")
 metadata/_custom_type_script = "uid://b2hkqq6dgsvqy"

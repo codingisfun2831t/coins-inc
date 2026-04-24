@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="CoinResource" format=3 uid="uid://ht6j5m7ra656"]
+
+[ext_resource type="Texture2D" uid="uid://b4x2bppqa7yrn" path="res://textures/coins/sliver-coin.png" id="1_ioupp"]
+[ext_resource type="Script" uid="uid://b2hkqq6dgsvqy" path="res://scripts/CoinResource.cs" id="2_wjrnl"]
+
+[resource]
+script = ExtResource("2_wjrnl")
+ID = "sliver-coin"
+Name = "Sliver Coin"
+FlavorText = "Better and shiner, prefect."
+Price = 100
+BaseValue = 5
+Texture = ExtResource("1_ioupp")
+metadata/_custom_type_script = "uid://b2hkqq6dgsvqy"
